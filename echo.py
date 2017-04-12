@@ -5,9 +5,9 @@ import urllib
 from dbhelper import DBHelper
 
 db = DBHelper()
-
-key_ow = '6985a5fb6a438fcd9d4c80b9c2dfac8c'
-TOKEN = "278636240:AAEbCUg3xxbgl2cqDiIPWpqNIoDxRGvnTSs"
+movie_key='your movie key'
+key_ow = 'your weather api key'
+TOKEN = "your bot access token"
 URL = "https://api.telegram.org/bot{}/".format(TOKEN)
 
 
@@ -46,7 +46,7 @@ def echo_all(updates):
             try:
                 keymovie = str2[1]
                 url11 = (
-                'https://api.themoviedb.org/3/search/movie?api_key=f1b1d0f56a3133579b63e4c47799126c&query=' + keymovie)
+                'https://api.themoviedb.org/3/search/movie?api_key={}&query='.format(movie_key) + keymovie)
                 url222 = url11.replace(" ", "%20")
                 f = urllib.request.urlopen(url222)
                 json_string = f.read()
